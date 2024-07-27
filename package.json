@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --base-href=https://falkhotaifidev.github.io/angular-seo-server-side/ --repo=https://github.com/falkhotaifidev/angular-seo-server-side.git"
   },
   "private": true,
   "dependencies": {
