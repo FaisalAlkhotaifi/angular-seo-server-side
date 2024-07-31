@@ -15,16 +15,21 @@ export class MetaService {
     }
   }
 
+  updateTags(metaTagInfo: MetaTag) {
+    this._updateTitleTag(metaTagInfo.title);
+    this._updateDescriptionTag(metaTagInfo.description);
+  }
+
   //#region Private Methods
 
-  private _updateTitleTag(title: string) {
+  private _updateTitleTag(title?: string) {
     if (title) {
       this.title.setTitle(title);
       this.meta.updateTag({ name: 'og:title', content: title });
     }
   }
 
-  private _updateDescriptionTag(description: string) {
+  private _updateDescriptionTag(description?: string) {
     if (description) {
       this.meta.updateTag({ name: 'description', content: description });
       this.meta.updateTag({ name: 'og:description', content: description });
@@ -59,4 +64,4 @@ export const META_INFO: MetaInfo[] = [
 ]
 
 export interface MetaInfo {route: string, tags: MetaTag}
-export interface MetaTag {title: string, description: string}
+export interface MetaTag {title?: string, description?: string}

@@ -7,6 +7,7 @@ import { ContactMeComponent } from './pages/contact-me/contact-me.component';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: HomeComponent
   },
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'contact-me',
     component: ContactMeComponent
+  },
+  {
+    path: 'about-me/:id',
+    component: AboutMeComponent
   }
 ];
 
